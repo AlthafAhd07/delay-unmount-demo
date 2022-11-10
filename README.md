@@ -153,7 +153,7 @@ We should assign a classname to the given component ( Delay ) and style it using
 
 <br/>
 
-## Some times It may be confusing for you, You can refer this [github Repo](https://github.com/AlthafAhd07/delay-unmount) to get the example code.
+## Some times It may be confusing for you, You can refer this [github Repo](https://github.com/AlthafAhd07/delay-unmount-demo) to get the example code.
 
 <br/>
 
