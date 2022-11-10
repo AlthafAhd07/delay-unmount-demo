@@ -77,6 +77,8 @@ export default App;
 
 We should assign a classname to the given component ( Delay ) and style it using css ( Animations ) . To assign the classname you should use the `unmount` and `mount` props.
 
+<br/>
+
 ## How to use
 
 - You will get a component named Delay.
