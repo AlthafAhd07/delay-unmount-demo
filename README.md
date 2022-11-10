@@ -65,7 +65,7 @@ We should assign a classname to the given component ( Delay ) and style it using
 
 ## **NOTE**
 
-- **If you are using it, your component will wrapped inside a div tag. ( It may cause speficity problems when you selecting your component through CSS ) . You can see the div tag when you inspect your component after it was mounted.**
+- ### If you are using it, your component will wrapped inside a div tag. ( It may cause speficity problems when you selecting your component through CSS ) . You can see the div tag when you inspect your component after it was mounted.
 
 <br/>
 
