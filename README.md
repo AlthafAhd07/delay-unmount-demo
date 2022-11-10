@@ -161,6 +161,57 @@ We should assign a classname to the given component ( Delay ) and style it using
 
 <br/>
 
+# If you are not like to download this as a dependancy, Simply you can copy and paste this code in a file. Now you are ready to go. you can import where you want and use it.
+
+<br/>
+
+  <pre>
+import React, { useEffect, useState, memo } from "react";
+
+export function useDelayUnmount(dependancy, delay = 300) {
+
+  const [show, setShow] = useState(() => !!dependancy);
+
+  useEffect(() => {
+    let timeout;
+    if (!!dependancy === false) {
+      timeout = setTimeout(() => {
+        setShow(false);
+      }, JSON.parse(delay));
+    }
+    if (!!dependancy === true) {
+      setShow(true);
+    }
+    return () => clearTimeout(timeout);
+  }, [dependancy, delay]);
+
+  return show;
+}
+
+function DelayComponent({
+  component: Com,
+  mount = null,
+  unmount = null,
+  dependancy = true,
+  delay = 3000,
+}) {
+
+  const show = useDelayUnmount(dependancy, delay);
+
+  return (
+    !!show && (
+       &lt;div className={show && !dependancy ? unmount : mount}>
+         &lt;Com />
+       &lt;/div>
+    )
+  );
+}
+
+export const Delay = memo(DelayComponent);
+  </pre>
+
+<br/>
+
 ## You can contact me through
 
 - [LinkedIn](https://www.linkedin.com/in/althafahd/)
