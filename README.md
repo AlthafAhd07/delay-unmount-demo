@@ -1,10 +1,77 @@
 # Delay Unmount
 
-<br/>
-
 ## Usage
 
 You can animate your React component while mounting and unmounting.
+
+<br/>
+
+## Example
+
+  <pre>
+import { useState } from "react";
+import Delay from "delay-unmount";
+
+import YourComponent from "./YourComponent";
+
+function App() {
+  const [visible, setVisible] = useState(false);
+
+  return (
+    &lt;div className="App">
+      &lt;button onClick={() => setVisible((old) => !old)}>Toggle Mount&lt;/button>
+
+      &lt;Delay
+        component={YourComponent}
+        dependancy={visible}
+        delay="1000"
+        mount="mount"
+        unmount="unmount"
+      />
+    &lt;/div>
+  );
+}
+
+export default App;
+
+  </pre>
+
+## CSS
+
+  <pre>
+.unmount {
+  animation: outAnimation 1000ms ease-out;
+}
+
+@keyframes outAnimation {
+  0% {
+    scale: 1;
+    opacity: 1;
+  }
+  100% {
+    scale: 0;
+    opacity: 0;
+  }
+}
+
+.mount {
+  animation: inAnimation 600ms ease-in;
+}
+
+@keyframes inAnimation {
+  0% {
+    scale: 0;
+    opacity: 0;
+  }
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+  </pre>
+
+<br/>
 
 ## How it will work
 
